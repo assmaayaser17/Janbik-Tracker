@@ -106,7 +106,7 @@ h1 {
   @apply relative z-[1] mt-2.5 flex flex-wrap gap-2;
 }
 #loginRow input {
-  @apply rounded-lg border-none px-3 py-2 font-sans;
+  @apply rounded-lg border-none px-3 py-2 font-sans text-teal-deeper placeholder:text-slate-400;
 }
 #loginRow button {
   @apply cursor-pointer rounded-lg border-none bg-lime px-3.5 py-2 font-sans font-bold text-teal-deeper;
