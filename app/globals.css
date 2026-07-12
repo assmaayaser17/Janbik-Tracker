@@ -1,0 +1,395 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --teal: #009999;
+  --teal-dark: #00736b;
+  --teal-deeper: #0c3b3b;
+  --purple: #7242ba;
+  --purple-deep: #372358;
+  --lavender: #af92ff;
+  --lime: #dfff4f;
+  --ice: #bffcfb;
+  --off: #f5fbfb;
+  --green: #0f6e56;
+  --amber: #9c7a3c;
+  --warm: #fff6e9;
+  --red: #b3543f;
+  --gray: #8a9aa0;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  @apply font-sans bg-off text-teal-deeper;
+  direction: rtl;
+}
+
+.wrap {
+  @apply mx-auto max-w-[1180px] p-4;
+}
+
+/* header */
+header {
+  @apply relative overflow-hidden bg-teal-deeper text-white;
+  border-radius: 0 0 22px 22px;
+  padding: 22px 20px 18px;
+}
+header .circle {
+  position: absolute;
+  left: -70px;
+  top: -70px;
+  width: 220px;
+  height: 220px;
+  border-radius: 50%;
+  background: var(--teal);
+  opacity: 0.35;
+}
+header .circle2 {
+  position: absolute;
+  left: 60px;
+  bottom: -90px;
+  width: 160px;
+  height: 160px;
+  border-radius: 50%;
+  background: var(--purple);
+  opacity: 0.3;
+}
+.brand {
+  @apply relative z-[1] flex items-center gap-3;
+}
+.logo {
+  @apply rounded-xl bg-lime px-3.5 py-2 text-xl font-bold text-teal-deeper;
+}
+h1 {
+  @apply text-xl leading-relaxed;
+}
+.sub {
+  @apply mt-1 text-xs text-ice;
+}
+.headbar {
+  @apply relative z-[1] mt-3.5 flex flex-wrap items-center gap-2.5;
+}
+.window {
+  @apply rounded-lg border border-white/25 bg-white/10 px-3 py-1.5 text-xs;
+}
+.window b {
+  @apply text-lime;
+}
+.pill {
+  @apply cursor-pointer rounded-full border-none px-4 py-1.5 font-sans text-xs;
+}
+.pill.read {
+  @apply bg-white font-bold text-teal-deeper;
+}
+.pill.edit {
+  @apply border border-white/50 bg-transparent text-white;
+}
+.pill.active {
+  @apply border-none bg-lime font-bold text-teal-deeper;
+}
+.pill.lang {
+  @apply ms-auto bg-purple text-white;
+}
+.pill.user {
+  @apply inline-flex cursor-default items-center gap-1.5 bg-white/15 text-white;
+}
+.pill.user button {
+  @apply cursor-pointer border-none bg-transparent font-sans text-[11px] font-bold text-lime;
+}
+#loginRow {
+  @apply relative z-[1] mt-2.5 flex flex-wrap gap-2;
+}
+#loginRow input {
+  @apply rounded-lg border-none px-3 py-2 font-sans;
+}
+#loginRow button {
+  @apply cursor-pointer rounded-lg border-none bg-lime px-3.5 py-2 font-sans font-bold text-teal-deeper;
+}
+#loginRow .cancel {
+  @apply border border-white/40 bg-transparent text-white;
+}
+#loginRow .err {
+  width: 100%;
+  color: #ffd3c7;
+  font-size: 11px;
+}
+.datastamp {
+  @apply relative z-[1] mt-2 text-xs text-ice;
+}
+.livedot {
+  display: inline-block;
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: var(--lime);
+  margin-inline-end: 4px;
+  vertical-align: middle;
+}
+
+/* sections */
+section {
+  @apply mt-4 rounded-2xl bg-white p-[18px] shadow-[0_2px_10px_rgba(12,59,59,0.06)];
+}
+.kicker {
+  @apply text-xs font-bold tracking-wide text-teal;
+}
+h2 {
+  @apply mt-0.5 text-[17px] text-purple-deep;
+}
+h3 {
+  @apply mb-1 text-sm text-purple-deep;
+}
+.hint {
+  @apply mb-2.5 text-[11px] text-gray;
+}
+
+/* board progress */
+.grid2 {
+  @apply grid grid-cols-1 gap-4 md:grid-cols-2;
+}
+.meterWrap {
+  @apply mt-3.5;
+}
+.bigNum {
+  @apply text-4xl font-bold text-teal;
+}
+.bigNum small {
+  @apply text-sm font-normal text-gray;
+}
+.badge {
+  @apply ms-2 inline-block rounded-lg px-2.5 py-0.5 text-[11px] font-bold;
+}
+.badge.ok {
+  @apply bg-ice text-teal-dark;
+}
+.badge.warn {
+  @apply bg-warm text-amber;
+}
+.meter {
+  @apply relative mt-2.5 rounded-[10px] bg-[#e5efef];
+  height: 16px;
+}
+.meter .fill {
+  height: 100%;
+  border-radius: 10px;
+  background: linear-gradient(90deg, var(--teal), var(--teal-dark));
+  transition: width 0.6s;
+}
+.meter .tick {
+  position: absolute;
+  top: -4px;
+  width: 2px;
+  height: 24px;
+  background: var(--purple);
+}
+.meter .ticklbl {
+  position: absolute;
+  top: 26px;
+  font-size: 10px;
+  color: var(--purple-deep);
+  transform: translateX(50%);
+}
+.cmp {
+  @apply mt-3;
+}
+.cmp .row {
+  @apply mb-2.5;
+}
+.cmp .lbl {
+  @apply mb-1 flex justify-between text-xs;
+}
+.cmp .bar {
+  @apply overflow-hidden rounded-lg bg-[#e5efef];
+  height: 12px;
+}
+.cmp .bar i {
+  display: block;
+  height: 100%;
+  border-radius: 8px;
+}
+.verdict {
+  @apply mt-2.5 rounded-[10px] px-3 py-2.5 text-[13px] font-bold;
+}
+.verdict.ahead {
+  @apply bg-ice text-teal-dark;
+}
+.verdict.behind {
+  @apply bg-warm text-amber;
+}
+
+/* KPI */
+.kpis {
+  @apply mt-3 grid gap-2.5;
+  grid-template-columns: repeat(auto-fit, minmax(130px, 1fr));
+}
+.kpi {
+  @apply rounded-xl border border-[#e0eded] bg-off p-3 text-center;
+}
+.kpi .n {
+  @apply text-2xl font-bold text-purple-deep;
+}
+.kpi .t {
+  @apply mt-0.5 text-[11px] text-teal-dark;
+}
+.kpi.hl {
+  @apply border-teal-deeper bg-teal-deeper;
+}
+.kpi.hl .n {
+  @apply text-lime;
+}
+.kpi.hl .t {
+  @apply text-ice;
+}
+
+/* charts */
+.charts {
+  @apply grid grid-cols-1 gap-4 lg:grid-cols-3;
+}
+.chartbox {
+  min-height: 220px;
+}
+.legend {
+  @apply mt-2 text-[11px];
+}
+.legend div {
+  @apply mb-[3px] flex items-center gap-1.5;
+}
+.dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 3px;
+  flex: none;
+}
+.hbar {
+  @apply mb-2;
+}
+.hbar .lbl {
+  @apply mb-[3px] flex justify-between text-[11px];
+}
+.hbar .bar {
+  @apply overflow-hidden rounded-md bg-[#e5efef];
+  height: 10px;
+}
+.hbar .bar i {
+  display: block;
+  height: 100%;
+  background: var(--purple);
+  border-radius: 6px;
+}
+.funnel .stage {
+  @apply mx-auto mb-1.5 flex justify-between rounded-lg px-2.5 py-1.5 text-[11px];
+  transition: width 0.5s;
+}
+
+/* table */
+.toolbar {
+  @apply my-3 flex flex-wrap items-center gap-2;
+}
+select,
+.btn {
+  @apply cursor-pointer rounded-lg border border-[#cfe2e2] bg-white px-2.5 py-1.5 font-sans text-xs text-teal-deeper;
+}
+.btn.primary {
+  @apply border-teal bg-teal font-bold text-white;
+}
+.btn.ghost {
+  @apply bg-off;
+}
+.btn:disabled {
+  @apply cursor-not-allowed opacity-40;
+}
+.count {
+  @apply ms-auto text-xs text-gray;
+}
+.tblwrap {
+  @apply overflow-x-auto rounded-xl border border-[#e0eded];
+}
+table {
+  width: 100%;
+  border-collapse: collapse;
+  min-width: 980px;
+}
+th {
+  @apply sticky top-0 whitespace-nowrap bg-teal-deeper px-2 py-2.5 text-right text-[11.5px] text-white;
+}
+td {
+  @apply border-b border-[#edf4f4] px-2 py-[9px] text-right align-top text-xs;
+}
+tr:nth-child(even) td {
+  background: #fafdfd;
+}
+td.name {
+  @apply min-w-[170px] font-bold text-purple-deep;
+}
+td.name .dist {
+  @apply mt-0.5 block text-[11px] font-normal text-teal-dark;
+}
+td.notes {
+  @apply min-w-[260px] max-w-[380px] leading-[1.7] text-[#41595c];
+}
+.chip {
+  @apply inline-block whitespace-nowrap rounded-2xl px-2.5 py-[3px] text-[11px] font-bold;
+}
+.desire {
+  @apply whitespace-nowrap text-[11px];
+}
+.phone {
+  direction: ltr;
+  unicode-bidi: embed;
+  white-space: nowrap;
+  font-size: 11.5px;
+}
+.stars {
+  @apply whitespace-nowrap text-[11px] text-amber;
+}
+td[contenteditable='true'] {
+  outline: 1px dashed var(--lavender);
+  background: #fcfaff !important;
+}
+.delbtn {
+  @apply cursor-pointer border-none bg-transparent text-sm text-red;
+}
+.addrow td {
+  @apply cursor-pointer text-center font-bold text-teal;
+}
+.editonly {
+  display: none;
+}
+body.editing .editonly {
+  display: inline-block;
+}
+body.editing table .editonly {
+  display: table-cell;
+}
+body.editing tr.addrow {
+  display: table-row;
+}
+tr.addrow {
+  display: none;
+}
+
+footer {
+  @apply p-[18px_6px_30px] text-[11px] leading-[1.9] text-gray;
+}
+footer b {
+  @apply text-teal-dark;
+}
+#toast {
+  @apply fixed bottom-5 right-5 z-[99] rounded-lg bg-teal-deeper px-4 py-2.5 text-xs text-lime opacity-0 pointer-events-none;
+  transition: opacity 0.3s;
+}
+#toast.show {
+  @apply opacity-100;
+}
+.loading-screen {
+  @apply flex min-h-screen items-center justify-center font-sans text-teal-deeper;
+}
+.config-warning {
+  @apply mx-4 mt-3 rounded-[10px] border border-[#f0dcb8] bg-warm px-3.5 py-2.5 text-xs text-amber;
+}
