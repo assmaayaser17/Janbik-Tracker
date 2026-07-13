@@ -514,14 +514,12 @@ export default function Page() {
       )}
       <header>
         <div className="block md:absolute md:left-4 md:top-4 md:z-50 md:block mb-3 md:mb-0">
-          <img src="/logo/logo-full.svg" alt="Janbik logo" className="block h-10 md:h-11 w-auto" />
+          <img src="/logo/logo.png" alt="Janbik logo" className="block h-10 md:h-11 w-auto" />
         </div>
         {/* <div className="circle"></div>
         <div className="circle2"></div> */}
         <div className="brand">
-          <div className="logo">
-            <img src="/logo/logo-full.svg" alt="Janbik logo" className="logoImage" />
-          </div>
+         
           <div>
 
             <h1>{t('title')}</h1>
@@ -529,7 +527,7 @@ export default function Page() {
           </div>
         </div>
         <div className="headbar">
-          <img src="/logo/logo-full.svg" alt="Janbik logo" className="miniLogo" />
+          {/* <img src="/logo/logo-full.svg" alt="Janbik logo" className="miniLogo" /> */}
           <span className="window">
             {t('window')}
             <b>{t('windowDates')}</b>
