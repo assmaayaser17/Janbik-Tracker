@@ -731,6 +731,7 @@ export default function Page() {
             <button className="btn primary" onClick={handleExportExcel}>{t('export')}</button>
             {editing && (
               <>
+                <button className="btn primary" onClick={handleAddRow}>{t('addRow')}</button>
                 <button className="btn ghost" onClick={() => fileInputRef.current?.click()}>{t('import')}</button>
                 <button className="btn ghost" onClick={handleReset}>{t('reset')}</button>
               </>
@@ -831,7 +832,19 @@ function Row({ row: r, editing, onCommit, onSelectChange, onDelete }: RowProps) 
         <td className="phone" contentEditable suppressContentEditableWarning onBlur={(e) => onCommit(id, 'phone', e.currentTarget.textContent?.trim() || '')}>
           {r.phone}
         </td>
-        <td><Stars r={r} /></td>
+        <td>
+          <select
+            value={String(r.rating)}
+            onChange={(e) => onSelectChange(id, 'rating', e.target.value)}
+            style={{ maxWidth: 90 }}
+          >
+            {[0, 1, 2, 3, 4, 5].map((n) => (
+              <option key={n} value={n}>
+                {n} {n === 1 ? 'star' : 'stars'}
+              </option>
+            ))}
+          </select>
+        </td>
         <td>
           <select value={r.status} onChange={(e) => onSelectChange(id, 'status', e.target.value)} style={{ maxWidth: 130 }}>
             {STATUSES.map((s) => (
