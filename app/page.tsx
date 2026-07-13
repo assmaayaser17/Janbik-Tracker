@@ -513,8 +513,8 @@ export default function Page() {
         </div>
       )}
       <header>
-        <div className="absolute left-4 top-4 z-50 block p-0 bg-transparent">
-          <img src="/logo/logo-full.svg" alt="Janbik logo" className="block h-11 w-auto" />
+        <div className="block md:absolute md:left-4 md:top-4 md:z-50 md:block mb-3 md:mb-0">
+          <img src="/logo/logo-full.svg" alt="Janbik logo" className="block h-10 md:h-11 w-auto" />
         </div>
         {/* <div className="circle"></div>
         <div className="circle2"></div> */}
