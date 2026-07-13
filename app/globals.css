@@ -37,6 +37,7 @@ body {
 /* header */
 header {
   @apply relative overflow-hidden bg-teal-deeper text-white;
+  min-height: 135px;
   border-radius: 0 0 22px 22px;
   padding: 22px 20px 18px;
 }
@@ -64,7 +65,19 @@ header .circle2 {
   @apply relative z-[1] flex items-center gap-3;
 }
 .logo {
-  @apply rounded-xl bg-lime px-3.5 py-2 text-xl font-bold text-teal-deeper;
+  @apply rounded-xl bg-lime px-3.5 py-2;
+}
+.logoImage {
+  display: block !important;
+  max-height: 40px;
+  width: auto !important;
+  filter: brightness(1.2);
+}
+.miniLogo {
+  display: block !important;
+  max-height: 30px;
+  width: auto !important;
+  margin-right: 0.75rem;
 }
 h1 {
   @apply text-xl leading-relaxed;

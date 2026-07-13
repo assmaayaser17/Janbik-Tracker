@@ -479,21 +479,21 @@ export default function Page() {
     const stages: [string, number][] =
       lang === 'ar'
         ? [
-            ['إجمالي القائمة', rows.length],
-            ['تم التواصل معهم', contacted],
-            ['مهتم فأعلى', interested],
-            ['اجتماع فأعلى', meeting],
-            ['تدريب فأعلى', training],
-            ['بايلوت مفعّل', active],
-          ]
+          ['إجمالي القائمة', rows.length],
+          ['تم التواصل معهم', contacted],
+          ['مهتم فأعلى', interested],
+          ['اجتماع فأعلى', meeting],
+          ['تدريب فأعلى', training],
+          ['بايلوت مفعّل', active],
+        ]
         : [
-            ['Total list', rows.length],
-            ['Contacted', contacted],
-            ['Interested+', interested],
-            ['Meeting+', meeting],
-            ['Training+', training],
-            ['Activated', active],
-          ];
+          ['Total list', rows.length],
+          ['Contacted', contacted],
+          ['Interested+', interested],
+          ['Meeting+', meeting],
+          ['Training+', training],
+          ['Activated', active],
+        ];
     const max = rows.length || 1;
     const cols = ['#0C3B3B', '#00736B', '#009999', '#7242BA', '#AF92FF', '#DFFF4F'];
     return stages.map(([l, n], i) => ({ l, n, width: Math.max((n / max) * 100, 28), bg: cols[i], color: i === 5 ? '#0C3B3B' : '#fff' }));
@@ -513,16 +513,23 @@ export default function Page() {
         </div>
       )}
       <header>
-        <div className="circle"></div>
-        <div className="circle2"></div>
+        <div className="absolute left-4 top-4 z-50 block p-0 bg-transparent">
+          <img src="/logo/logo-full.svg" alt="Janbik logo" className="block h-11 w-auto" />
+        </div>
+        {/* <div className="circle"></div>
+        <div className="circle2"></div> */}
         <div className="brand">
-          <div className="logo">جنبك</div>
+          <div className="logo">
+            <img src="/logo/logo-full.svg" alt="Janbik logo" className="logoImage" />
+          </div>
           <div>
+
             <h1>{t('title')}</h1>
             <div className="sub">{t('subtitle')}</div>
           </div>
         </div>
         <div className="headbar">
+          <img src="/logo/logo-full.svg" alt="Janbik logo" className="miniLogo" />
           <span className="window">
             {t('window')}
             <b>{t('windowDates')}</b>
@@ -907,4 +914,5 @@ function Row({ row: r, editing, onCommit, onSelectChange, onDelete }: RowProps) 
       <td className="notes">{r.notes || '—'}</td>
     </tr>
   );
+
 }
